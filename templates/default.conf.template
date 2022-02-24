@@ -1,0 +1,14 @@
+server {
+  listen ${WEB_PORT};
+  server_name web;
+
+	location = /health {
+		return 200 "healthy\n";
+	}
+
+  location / {
+    root   /var/www/html;
+    index  index.html index.htm;
+  }
+}
+
